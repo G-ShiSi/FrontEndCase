@@ -1,0 +1,72 @@
+@import url('http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    /* 定义font-family时,最好在最后加一个sans-serif,这样如果所列出的字体都不能用，则默认的sans-serif字体能保证调用; */
+}
+body
+{
+    background: #0a2a43;
+    min-height: 1500px;
+    /* min-height：该属性值会对元素的高度设置一个最低限制。因此，元素可以比指定值高，但不能比其矮。不允许指定负值。目前测试元素有固有高度，当min-height设置的比固有高度小时，元素会取固有高度 */
+}
+section
+{
+    /* 生成相对定位的元素，相对于其正常位置进行定位。因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。 */
+    /* 子绝父相：子元素绝对定位，父元素相对定位。让子元素 以其父元素为标准来定位。（如果不这么做，子元素就会相对body或浏览器定位产生不好的效果。 */
+    position: relative;
+    width: 100%;
+    /* 1.vw：1vw等于视口宽度的1%。
+    2.vh：1vh等于视口高度的1%。 */
+    height: 100vh;
+    /* overflow这个属性定义溢出元素内容区的内容会如何处理 */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section::before
+{
+    content:'';
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#0a2a43,transparent);
+    z-index: 10000;
+}
+section::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a2a43;
+    z-index: 10000;
+    mix-blend-mode: color;
+}
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+#text
+{
+   position: relative; 
+   color: #fff;
+   font-size: 10em;
+   z-index: 1;
+}
+#road
+{
+    z-index: 2;
+}

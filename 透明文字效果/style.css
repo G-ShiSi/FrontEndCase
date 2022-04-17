@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.box{
+    /* vh是相对于视口的高度，视口被均分为100单位的vh
+    vw是相对于视口的高度，视口被均分为100单位的vw */
+    position: relative;
+    height: 100vh;
+    background: url(images/wallhaven-v9rv3p.jpg) no-repeat;
+    /* 这里cover是把背景图片扩展的足够大使背景图片完全覆盖背景区域 */
+    background-size: cover;
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 10em;
+    color: #fff;
+    /* 控制文本的大小写 */
+    text-transform: uppercase;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+    /* 叠加模式把图像的基色颜色与混合色颜色相混合产生一种中间色 */
+    mix-blend-mode: overlay;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, .2);
+}
